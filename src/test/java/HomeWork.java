@@ -15,6 +15,31 @@ public class HomeWork {
         wd = new ChromeDriver();
         wd.get("https://telranedu.web.app/login");
     }
+    @Test
+public void classwork(){
+        //parent
+        WebElement el = wd.findElement(By.xpath("//h1/parent::div"));
+        WebElement el1 = wd.findElement(By.xpath("//h1/parent::*"));
+        WebElement el2 = wd.findElement(By.xpath("//h1/.."));
+
+        //ancestor
+        WebElement el3 = wd.findElement(By.xpath("//h1/ancestor::*"));
+        WebElement el4 = wd.findElement(By.xpath("//h1/ancestor::div"));
+        WebElement el5 = wd.findElement(By.xpath("//h1/ancestor::div[2]"));
+
+        //ancestor or self
+        WebElement el6 = wd.findElement(By.xpath("//h1/ancestor-or-self::*"));
+        List<WebElement> list = wd.findElements(By.xpath("//h1/ancestor-or-self::*"));
+
+        //following-sibling
+        List<WebElement> list1 = wd.findElements(By.xpath("//h1/following-sibling::a"));
+
+        //preceding-sibling
+
+        WebElement el7 = wd.findElement(By.xpath("//a[last()]/preceding-sibling::a[2]"));
+        List<WebElement> list2 = wd.findElements(By.xpath("//a[last()]/preceding-sibling::*"));
+
+    }
 
     @Test
     public void homework1() {
@@ -39,6 +64,10 @@ public class HomeWork {
         WebElement element9 = wd.findElement(By.tagName("a"));
         WebElement element10 = wd.findElement(By.cssSelector("a"));
         WebElement element34 = wd.findElement(By.xpath("//a"));
+
+        WebElement el9 = wd.findElement(By.tagName("form"));
+        WebElement el10 = wd.findElement(By.cssSelector("form"));
+        WebElement el34 = wd.findElement(By.xpath("//form"));
 
         List<WebElement> a = wd.findElements(By.tagName("a"));
         List<WebElement> list = wd.findElements(By.cssSelector("a"));
